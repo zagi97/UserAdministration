@@ -51,8 +51,31 @@ namespace WindowsFormsUsers
                 FormEditUser.inptEditSurname.Text = DataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
                 FormEditUser.Show(); // prikazi mi formu
             }
+
+            if (DataGridViewUsers.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
+            {
+                
+                Form3 Form3 = new Form3(this);
+                Form3.ID = DataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+               /* Form3.Name = DataGridViewUsers.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Form3.Surname = DataGridViewUsers.Rows[e.RowIndex].Cells[2].Value.ToString();
+                Form3.Password = DataGridViewUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
+                Form3.Username = DataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();*/
+                Form3.Show(); 
+            }
+
         }
 
+        
+        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void btnAddUsers_Click(object sender, EventArgs e)
+        {
+            Form4 Form4 = new Form4(this);
+            Form4.Show();
+        }
     }
 }
